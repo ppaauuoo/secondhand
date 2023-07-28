@@ -8,7 +8,7 @@
 	let items = [
 		{ label: 'มาร์เก็ตเพลส', icon: 'fa-bag-shopping', value: 1, component: Tab1 },
 		{ label: "รถยนต์", icon: 'fa-car-burst', value: 2, component: Tab2 },
-		{ label: "</i>อสังหาฯ", icon: 'fa-city', value: 3, component: Tab3 }
+		{ label: "อสังหาฯ", icon: 'fa-city', value: 3, component: Tab3 }
 	];
 </script>
 

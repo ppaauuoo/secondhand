@@ -1,5 +1,23 @@
-<div class="navbar bg-base-100">
+<script>
+	import Login from '$lib/Login.svelte';
+	import Chat from '$lib/Chat.svelte';
 
+
+	export let status;
+
+
+	let items = [];
+	$: {
+		if (status) {
+			items = ['dog', 'ball'];
+		} else {
+			items = ['Pleas login.'];
+		}
+	}
+
+</script>
+
+<div class="navbar bg-base-100">
 	<!-- drawer button -->
 	<div class="flex-none sm:hidden">
 		<label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -18,7 +36,6 @@
 		</label>
 	</div>
 
-	
 	<div class="navbar-start">
 		<p class="normal-case text-xl">MeeKong</p>
 		<a href="/" class="btn btn-ghost normal-case text-lg mx-4 hidden sm:flex">Home</a>
@@ -27,15 +44,11 @@
 		<a href="/favorite" class="btn btn-ghost btn-circle">
 			<i class="fa-regular fa-heart fa-lg" />
 		</a>
-		<button class="btn btn-ghost btn-circle">
-			<div class="indicator">
-				<i class="fa-regular fa-comment fa-lg" />
-				<span class="badge badge-xs badge-primary indicator-item invisible sm:visible" />
-			</div>
-		</button>
-		<a href="/" class="btn btn-ghost normal-case text-lg mx-4 hidden md:flex"
-			>เข้าสู่ระบบ / สมัครสมาชิก</a
-		>
+
+
+		<Chat {items}/>
+
+		<Login {status} />
 		<a href="/" class="btn btn-primary normal-case text-lg mx-4">ลงขาย</a>
 	</div>
 </div>
